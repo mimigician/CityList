@@ -83,6 +83,7 @@ public class MainActivityTest {
         onView(withId(R.id.button_confirm)).perform(click());
 
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).perform(click());
+        onView(withId(R.id.id_layout)).check(matches(isDisplayed()));
     }
     @Test
     public void showTestText() {
@@ -91,7 +92,7 @@ public class MainActivityTest {
         onView(withId(R.id.button_confirm)).perform(click());
 
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).perform(click());
-        onView(withId(R.id.id_layout)).check(matches(isDisplayed()));
+
         onView(withText("Edmonton")).check(matches(isDisplayed()));
     }
     @Test
@@ -100,7 +101,7 @@ public class MainActivityTest {
         onView(withId(R.id.editText_name)).perform(ViewActions.typeText("Edmonton"));
         onView(withId(R.id.button_confirm)).perform(click());
         onData(anything()).inAdapterView(withId(R.id.city_list)).atPosition(0).perform(click());
-        
+
         onView(withId(R.id.button)).perform(click());
         onView(withId(R.id.id_main)).check(matches(isDisplayed()));
     }
